@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <style>
+    .hemisphere-content {
+      text-align: center;
+      padding-top: 40px;
+    }
+    #hemisphere-images{
+      text-align: center;
+      padding-top:20px;
+      padding-right:20px;
+      outline: 2px solid lightgray;
+    }
+    .news-teaser{
+      padding-bottom: 40px;
+    }
+  </style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data</a></p>
+    </div>
+
+    <div class="row" id="mars-news">
+      <div class="col-md-12">
+        <h1 class="description-header">Latest Mars News</h1>
+        <hr class="description-hr"/>
+        <h4 class="news-title"><strong>{{info.news_title}}</strong></h4>
+        <p class="news-teaser">{{info.news_p}}</p>
+      </div>
+    </div>
+
+    <div class="container">
+    <section class="row">
+        <div class="col-md-8">
+          <h1 class="description-header">Featured Mars Image</h1>
+          <img src="{{info.featured_image_url}}" alt="Featured Image" id="description-image"/>
+        </div>
+
+      <div class="row" id="mars-facts">
+        <div class="col-md-4">
+          <h1 class="description-header">Mars Facts</h1>
+          <div>
+            {{info.facts_table | safe}}
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <div class="container">
+      <section class="row">
+        <div class="col-md-12">
+          <article class="hemisphere-content">
+            <h1 class="description-header">Mars Hemispheres</h1>
+            <hr class="description-hr"/>
+            <div>
+              <div class="col-md-6" id="hemisphere-images">
+                <img src="{{info.hemisphere_image_urls[0].img_url}}" alt="{{info.hemisphere_image_urls[0].title}}" width=400px height=400px />
+                <h4>{{info.hemisphere_image_urls[0].title}}</h4>
+              </div>
+              <div class="col-md-6" id="hemisphere-images">
+                <img src="{{info.hemisphere_image_urls[1].img_url}}" alt="{{info.hemisphere_image_urls[1].title}}" width=400px height=400px />
+                <h4>{{info.hemisphere_image_urls[1].title}}</h4>
+              </div>
+              <div class="col-md-6" id="hemisphere-images">
+                <img src="{{info.hemisphere_image_urls[2].img_url}}" alt="{{info.hemisphere_image_urls[2].title}}" width=400px height=400px />
+                <h4>{{info.hemisphere_image_urls[2].title}}</h4>
+              </div>
+              <div class="col-md-6" id="hemisphere-images">
+                <img src="{{info.hemisphere_image_urls[3].img_url}}" alt="{{info.hemisphere_image_urls[3].title}}" width=400px height=400px />
+                <h4>{{info.hemisphere_image_urls[3].title}}</h4>
+              </div>             
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</body>
+
+</html>
+
